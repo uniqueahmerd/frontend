@@ -30,14 +30,14 @@ import about_us_icon from "./about_us_icon.png";
 import about_us_image from "./about_us_image.jpg";
 import giftbox from "./giftbox.png";
 import customer_care_icon from "./customer_care_icon.png";
-import withdraw_management from "./withdraw_management.png";
+import withdrawmanagement from "./withdraw_management.png";
 import account_history_icon from "./account_history_icon.png";
 import rules from "./rules.png";
 
 export const assets = {
   rules,
   account_history_icon,
-  withdraw_management,
+  withdrawmanagement,
   customer_care_icon,
   giftbox,
   about_us_image,
@@ -72,72 +72,7 @@ export const assets = {
   help_icon,
 };
 
-//  const products = [
-//   {
-//     _id: 1,
-//     name: "VIP 1",
-//     price: 300,
-//     image: [product_1],
-//     daily_income: "40",
-//     total_income: "2,400",
-//   },
-//   {
-//     _id: 2,
-//     name: "VIP 2",
-//     price: 500,
-//     image: [product_2],
-//     daily_income: "68",
-//     total_income: " 4,080",
-//   },
-//   {
-//     _id: 3,
-//     name: "VIP 3",
-//     price: 1000,
-//     image: [product_3],
-//     daily_income: "140",
-//     total_income: "8,400",
-//   },
-//   {
-//     _id: 4,
-//     name: "VIP 4",
-//     price: 2000,
-//     image: [product_4],
-//     daily_income: "294",
-//     total_income: "17,640",
-//   },
-//   {
-//     _id: 5,
-//     name: "VIP 5",
-//     price: 5000,
-//     image: [product_5],
-//     daily_income: "770",
-//     total_income: "46,200",
-//   },
-//   {
-//     _id: 6,
-//     name: "VIP 6",
-//     price: 8000,
-//     image: [product_6],
-//     daily_income: "1,290",
-//     total_income: "77,400",
-//   },
-//   {
-//     _id: 7,
-//     name: "VIP 7",
-//     price: 12000,
-//     image: [product_7],
-//     daily_income: "2,060",
-//     total_income: "123,600",
-//   },
-//   {
-//     _id: 8,
-//     name: "VIP 8",
-//     price: 30000,
-//     image: [product_8],
-//     daily_income: "5,760",
-//     total_income: "345,600",
-//   },
-// ];
+//
 
 export const menu = [
   {
@@ -167,7 +102,7 @@ export const menu = [
     path: "/ManageRecharge",
   },
   {
-    image: [withdraw_management],
+    image: [withdrawmanagement],
     name: "Withdrawal Management",
     path: "/ManageWithdrawal",
   },
