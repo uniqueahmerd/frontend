@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { AppContext } from "../contex/Contex";
+import { backendUrl } from "../contex/Contex";
 
 const ResetPassword = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -12,7 +13,7 @@ const ResetPassword = () => {
   const [inputOtp, setInputOtp] = useState("");
   const [otpError, setOtpError] = useState("");
   const [message, setMessage] = useState("");
-  const { navigate, backendUrl } = useContext(AppContext);
+  const { navigate } = useContext(AppContext);
 
   // Generate OTP when the component mounts
   useEffect(() => {
