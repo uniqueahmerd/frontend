@@ -38,13 +38,12 @@ const ResetPassword = () => {
     setLoading(true);
 
     try {
+      console.log("Sending reset request:", { phone, newPassword });
       const response = await axios.post(
         `${backendUrl}/api/users/reset-password`,
-        {
-          phone,
-          newPassword,
-        }
+        { phone, newPassword }
       );
+      console.log("Reset response:", response.data);
 
       if (response.data.success) {
         setMessage(response.data.message);

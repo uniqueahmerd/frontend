@@ -86,13 +86,15 @@ const Recharge = () => {
         <div className="mb-5">
           <p className="text-2xl text-gray-700 font-bold">Account Details</p>
           <p className="font-semibold text-lg my-2">
-            Bank Name:<span className="text-gray-500"> Your Bank</span>
+            Bank Name:
+            <span className="text-gray-500">Commercial Bank Of Ethopia</span>
           </p>
           <p className="font-semibold text-lg  my-2">
-            Account Number:<span className="text-gray-500"> 123456789</span>
+            Account Number:<span className="text-gray-500"> 1000527486247</span>
           </p>
           <p className="font-semibold text-lg my-2">
-            Account Name:<span className="text-gray-500"> John Doe</span>
+            Account Name:
+            <span className="text-gray-500"> Burte Wondimu Tsegaye</span>
           </p>
         </div>
         <div className="border border-gray-500 mt-3 py-3 px-3 rounded-full">
