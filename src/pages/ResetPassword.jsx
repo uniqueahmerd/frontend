@@ -10,7 +10,6 @@ const ResetPassword = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [inputOtp, setInputOtp] = useState("");
-  const [verified, setVerified] = useState(false);
   const [otpError, setOtpError] = useState("");
   const [message, setMessage] = useState("");
   const { navigate, backendUrl } = useContext(AppContext);
@@ -21,43 +20,42 @@ const ResetPassword = () => {
     setOtp(generatedOtp);
   }, []);
 
-  const handleVerify = () => {
-    if (inputOtp === otp) {
-      if (newPassword === confirmPassword) {
-        setVerified(true);
-      } else {
-        setError("Password Did not Match");
-      }
-    } else {
-      setOtpError("Incorrect OTP");
-    }
-  };
-
   const onSubmiHandler = async (e) => {
     e.preventDefault();
-    if (verified) {
-      setLoading(true);
-      handleVerify();
-      try {
-        const response = await axios.post(
-          `${backendUrl}/api/users/reset-password`,
-          {
-            phone,
-            newPassword,
-          }
-        );
 
-        if (response.data.success) {
-          setMessage(response.data.message);
-          navigate("/login");
-        } else {
-          setError(response.data.message);
+    // First, verify OTP and password match
+    if (inputOtp !== otp) {
+      setOtpError("Incorrect OTP");
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      setError("Password Did not Match");
+      return;
+    }
+
+    setOtpError("");
+    setError("");
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        `${backendUrl}/api/users/reset-password`,
+        {
+          phone,
+          newPassword,
         }
-      } catch (error) {
-        setError(error.response?.data?.message || "An error occurred.");
-      } finally {
-        setLoading(false);
+      );
+
+      if (response.data.success) {
+        setMessage(response.data.message);
+        navigate("/login");
+      } else {
+        setError(response.data.message);
       }
+    } catch (error) {
+      setError(error.response?.data?.message || "An error occurred.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -105,7 +103,9 @@ const ResetPassword = () => {
         <p className="text-red-600 text-sm">{otpError}</p>
         <button
           type="submit"
-          className="cursor-not-allowed bg-blue-900 text-white py-2 rounded mt-5 w-full"
+          className={`bg-blue-900 text-white py-2 rounded mt-5 w-full ${
+            loading ? "cursor-not-allowed" : ""
+          }`}
           disabled={loading}
         >
           {loading ? "Resetting..." : "Reset Password"}
