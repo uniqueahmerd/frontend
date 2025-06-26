@@ -30,7 +30,7 @@ import about_us_icon from "./about_us_icon.png";
 import about_us_image from "./about_us_image.jpg";
 import giftbox from "./giftbox.png";
 import customer_care_icon from "./customer_care_icon.png";
-import Withdraw_management from "./Withdraw_management.jpg";
+import Withdraw_management from "./Withdraw_management.png";
 import account_history_icon from "./account_history_icon.png";
 import rules from "./rules.png";
 
