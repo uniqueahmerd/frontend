@@ -3,7 +3,7 @@ import axios from "axios";
 import { AppContext } from "../contex/Contex";
 
 const ResetPassword = () => {
-  const [phone, setPhone] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [otp, setOtp] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -38,10 +38,10 @@ const ResetPassword = () => {
     setLoading(true);
 
     try {
-      console.log("Sending reset request:", { phone, newPassword });
+      console.log("Sending reset request:", { phoneNumber, newPassword });
       const response = await axios.post(
         `${backendUrl}/api/users/reset-password`,
-        { phone, newPassword }
+        { phoneNumber, newPassword }
       );
       console.log("Reset response:", response.data);
 
@@ -66,8 +66,8 @@ const ResetPassword = () => {
         <input
           type="tel"
           placeholder="Enter your phone number"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
           className="border border-gray-300 rounded-sm outline-none py-2 px-3"
         />
         <input
